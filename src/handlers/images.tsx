@@ -12,12 +12,12 @@ export const apiRoutes = (app: Elysia) =>
           const response = await axios.post(
             'https://api.runpod.ai/v2/sd-anything-v4/run',
             {
-              method: 'POST',
               input: {
                 prompt: content,
                 negative_prompt:
                   'blurry, side looking, duplication, lowres, cropped, worst quality, low quality, jpeg artifacts, out of frame, watermark, signature',
               },
+              webhook: `${process.env.NGROK_URL}/images/webhook`,
             },
             {
               headers: {
@@ -32,6 +32,6 @@ export const apiRoutes = (app: Elysia) =>
         { body: t.Object({ content: t.String({ minLength: 1 }) }) },
       )
       .post('/webhook', (ctx) => {
-        console.log(ctx.request)
+        console.log(ctx)
       }),
   )
