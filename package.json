@@ -10,6 +10,7 @@
     "@elysiajs/html": "^0.5.2",
     "@elysiajs/static": "^0.5.3",
     "@libsql/client": "^0.3.1",
+    "axios": "^1.4.0",
     "drizzle-orm": "^0.27.2",
     "elysia": "latest"
   },
