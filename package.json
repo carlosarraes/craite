@@ -1,0 +1,22 @@
+{
+  "name": "creative",
+  "version": "1.0.44",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "db:push": "bunx drizzle-kit push:sqlite",
+    "db:studio": "bunx drizzle-kit studio"
+  },
+  "dependencies": {
+    "@elysiajs/html": "^0.5.2",
+    "@libsql/client": "^0.3.1",
+    "drizzle-orm": "^0.27.2",
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "drizzle-kit": "^0.19.12",
+    "typed-html": "^3.0.1"
+  },
+  "type": "module",
+  "module": "src/index.js"
+}
