@@ -1,3 +1,4 @@
+import elements from 'typed-html'
 import { images } from '@/db/schema'
 import { setup } from '@/db/setup'
 import { generateSeed } from '@/helpers'
@@ -32,7 +33,7 @@ export const apiRoutes = (app: Elysia) =>
             },
           )
 
-          await db
+          const image = await db
             .insert(images)
             .values({
               content,
@@ -41,6 +42,24 @@ export const apiRoutes = (app: Elysia) =>
             })
             .returning()
             .get()
+
+          return (
+            <div
+              id="image-id"
+              class="flex justify-between items-center w-full text-xs mt-2 pl-1"
+              hx-get={`/show/${image.imageId}`}
+              hx-trigger="load delay:2s"
+              hx-swap="outerHTML"
+            >
+              <span>{image.imageId}</span>
+              <div class="flex gap-2 items-center">
+                <span class="text-yellow-600 animate-pulse">Processing...</span>
+                <div class="w-2 h-2 bg-yellow-600 animate-pulse rounded"></div>
+                <div class="w-2 h-2 bg-sky-600 opacity-20 rounded"></div>
+                <div class="w-2 h-2 bg-green-600 opacity-20 rounded"></div>
+              </div>
+            </div>
+          )
         },
         { body: t.Object({ content: t.String({ minLength: 1 }) }) },
       )
