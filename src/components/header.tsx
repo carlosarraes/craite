@@ -5,7 +5,7 @@ const Header = () => {
     <header class="flex justify-between items-center w-full mb-4 p-4">
       <h1 class="text-4xl text-sky-600 font-medium tracking-wide">craite</h1>
       <div class="flex space-x-4">
-        <span class="hover:underline cursor-pointer">Histórico</span>
+        <span class="hover:underline cursor-pointer">History</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

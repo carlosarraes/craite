@@ -19,7 +19,8 @@ export const Dashboard = () => {
           class="w-full"
           hx-post="/images/create"
           hx-trigger="submit"
-          hx-target="#content"
+          hx-target="#image-id"
+          hx-swap="outerHTML"
           _="on htmx:afterRequest reset() me"
         >
           <input
@@ -27,8 +28,11 @@ export const Dashboard = () => {
             type="text"
             name="content"
             id="content"
-            placeholder="Digite seu prompt..."
+            placeholder="Type your prompt here"
           />
+          <div id="image-id" class="flex justify-between items-center w-full text-xs mt-2 pl-1">
+            Your image id will appear here
+          </div>
         </form>
       </section>
     </main>
