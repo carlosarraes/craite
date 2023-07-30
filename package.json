@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "bun run --watch src/index.ts",
     "db:push": "bunx drizzle-kit push:sqlite",
+    "db:generate": "bunx drizzle-kit generate:pg",
     "db:studio": "bunx drizzle-kit studio"
   },
   "dependencies": {
