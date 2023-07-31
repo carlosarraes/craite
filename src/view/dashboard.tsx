@@ -3,9 +3,12 @@ import elements from 'typed-html'
 
 export const Dashboard = () => {
   return (
-    <main class="flex flex-col items-center justify-center w-full max-w-lg">
+    <main class="flex flex-col items-center justify-center w-full max-w-md">
       <Header />
-      <section class="flex flex-col p-10 w-full bg-white rounded-lg shadow-lg items-center justify-center space-y-10">
+      <section
+        id="section-content"
+        class="flex flex-col p-6 w-full bg-white rounded-lg shadow-lg items-center justify-center space-y-10"
+      >
         <div
           hx-get="/show"
           hx-swap="innerHTML"
@@ -16,7 +19,7 @@ export const Dashboard = () => {
           <span class="text-xs self-center">Loading...</span>
         </div>
         <form
-          class="w-full"
+          class="w-full max-w-md"
           hx-post="/images/create"
           hx-trigger="submit"
           hx-target="#image-id"
