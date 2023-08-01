@@ -10,18 +10,29 @@ export const viewRoutes = (app: Elysia) =>
   app
     .use(setup)
     .get('/dashboard', () => <Dashboard />)
-    .get('/history', async ({ store: { db } }) => {
-      const currentTime = new Date().toISOString()
+    .get(
+      '/history/:off',
+      async ({ store: { db }, params: { off } }) => {
+        const currentTime = new Date().toISOString()
 
-      const allImages = await db
-        .select()
-        .from(images)
-        .where(and(isNotNull(images.url), gt(images.expiresAt, currentTime)))
-        .orderBy(desc(images.expiresAt))
-        .all()
+        const allImages = await db
+          .select()
+          .from(images)
+          .where(and(isNotNull(images.url), gt(images.expiresAt, currentTime)))
+          .orderBy(desc(images.expiresAt))
+          .limit(11)
+          .offset(off)
+          .all()
 
-      return <History images={allImages} />
-    })
+        const hasNext = allImages.length > 10
+        if (hasNext) allImages.pop()
+
+        return <History images={allImages} off={off} hasNext={hasNext} />
+      },
+      {
+        params: t.Object({ off: t.Numeric({ minimum: 0 }) }),
+      },
+    )
     .get('/show', async ({ store: { db } }) => {
       const image = await db
         .select()

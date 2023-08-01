@@ -16,7 +16,7 @@ const Header = () => {
         </span>
         <span
           class="hover:underline cursor-pointer"
-          hx-get="/history"
+          hx-get="/history/0"
           hx-swap="innerHTML"
           hx-trigger="click"
           hx-target="#section-content"
