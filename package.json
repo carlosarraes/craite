@@ -2,7 +2,9 @@
   "name": "creative",
   "version": "1.0.44",
   "scripts": {
-    "dev": "bun run --watch src/index.ts",
+    "dev": "concurrently \"bun run --watch src/index.ts\" \"bun run tw:dev\"",
+    "tw": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css",
+    "tw:dev": "bunx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch",
     "db:push": "bunx drizzle-kit push:sqlite",
     "db:generate": "bunx drizzle-kit generate:pg",
     "db:studio": "bunx drizzle-kit studio"
@@ -19,7 +21,9 @@
   "devDependencies": {
     "@flydotio/dockerfile": "latest",
     "bun-types": "latest",
+    "concurrently": "^8.2.0",
     "drizzle-kit": "^0.19.12",
+    "tailwindcss": "^3.3.3",
     "typed-html": "^3.0.1"
   },
   "type": "module",

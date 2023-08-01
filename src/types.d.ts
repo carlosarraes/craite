@@ -5,5 +5,7 @@ declare namespace JSX {
   interface IntrinsicElements {
     svg: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HtmlTag
     path: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HtmlTag
+    polyline: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HtmlTag
+    circle: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & HtmlTag
   }
 }
