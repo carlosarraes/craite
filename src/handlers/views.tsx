@@ -46,7 +46,7 @@ export const viewRoutes = (app: Elysia) =>
           <div
             hx-get="/show"
             hx-swap="outerHTML"
-            hx-trigger="load delay:2s"
+            hx-trigger="load delay:1s"
             class="w-96 h-96 flex justify-center items-center gap-2"
           >
             <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse self-center"></div>
