@@ -3,7 +3,7 @@ import elements from 'typed-html'
 export const Layout = ({ children }: elements.Children) => {
   return ` 
   <!DOCTYPE html>
-  <html id="root" class="dark">
+  <html id="root" class="">
     <head>
       <title>craite</title>
       <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
