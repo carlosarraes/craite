@@ -21,6 +21,12 @@ Here's the fun part: You give the AI a phrase, and then some cool magic happens 
 
 I save these pictures along with their text inputs in the database, but here's the catch: they've got an expiration date. This is mostly because I'm slightly terrified of getting a massive AWS bill 😂 (Looking at you my 0.52 cents bill)
 
+### `.tsx` But It's Not React? Yep!
+
+You might've spotted those .tsx files and thought "Aha, React!" but hold your horses. I've gone down a different route this time, using typed-html instead. It's a neat package that makes creating components feel a lot like React.
+
+However, there's no Virtual DOM happening here. Instead, I've got HTMX handling all the interactive stuff - and it does a fine job without needing a Virtual DOM. It's a nice change of pace and a fun, fresh approach to building a web app. Hope you enjoy playing around with it as much as I did!
+
 ## Please Be Cool
 
 Just a quick note: please use Craite responsibly. I don't have much time to moderate content, but I will do my best to remove anything inappropriate as soon as possible.
