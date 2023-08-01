@@ -15,11 +15,11 @@ const ShowImage = ({ image }: ShowImageProps) => {
           Seed: {image.seed} -
           <span class="font-bold">Expires at: {dayjs(image.expiresAt).format('DD/MM/YYYY')}</span>
         </span>
-        <span class="absolute bottom-0 right-0 text-xs font-bold text-red-500 p-2">
+        <span class="absolute bottom-0 right-0 text-xs font-bold text-red-500 p-2 ">
           {image.imageId}
         </span>
       </div>
-      <span class="text-xs text-black p-2 my-2">{image.content}</span>
+      <span class="text-xs text-black dark:text-white p-2 my-2">{image.content}</span>
     </div>
   )
 }

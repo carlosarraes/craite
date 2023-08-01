@@ -14,7 +14,7 @@ const app = new Elysia()
   .get('/', ({ html }) =>
     html(
       <Layout>
-        <body class="flex w-full h-screen justify-center items-center">
+        <body class="flex w-full h-screen justify-center items-center bg-white dark:bg-gray-800">
           <main class="flex flex-col items-center justify-center w-full max-w-lg">
             <Header />
             <section
@@ -22,6 +22,7 @@ const app = new Elysia()
               hx-get="/dashboard"
               hx-trigger="load"
               hx-swap="outerHTML"
+              class="flex flex-col items-center justify-center w-full bg-transparent"
             />
           </main>
         </body>

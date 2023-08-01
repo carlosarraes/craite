@@ -75,7 +75,7 @@ export const viewRoutes = (app: Elysia) =>
               hx-trigger="every 4s"
               hx-swap="outerHTML"
             >
-              <span class="text-xs">{id}</span>
+              <span class="text-black dark:text-white text-xs">{id}</span>
               <div class="flex gap-2 items-center">
                 <span class="text-sky-600 animate-pulse">Creating...</span>
                 <div class="w-2 h-2 bg-yellow-600 opacity-20 rounded"></div>
@@ -88,7 +88,7 @@ export const viewRoutes = (app: Elysia) =>
 
         return (
           <div id="image-id" class="flex justify-between items-center w-full text-xs mt-2 pl-1">
-            <span class="text-xs">{id}</span>
+            <span class="text-black dark:text-white text-xs">{id}</span>
             <div class="flex gap-2 items-center">
               <div>
                 <span class="text-green-600">Done</span>

@@ -16,16 +16,16 @@ const History = ({ images, off, hasNext }: HistoryProps) => {
 
   return (
     <section id="history" class="flex flex-col w-full">
-      <div class="flex justify-evenly items-center border-b mb-4">
+      <div class="flex justify-evenly items-center border-b mb-4 text-black dark:text-white">
         <h2>History</h2>
-        <p class="text-xs">All the images that have been generated.</p>
+        <p class="text-xs hidden sm:block">All the images that have been generated.</p>
       </div>
       <section id="images" class="flex flex-col overflow-auto max-h-[600px] space-y-4">
-        {images.map((image) => (
+        {images.map((image, i) => (
           <ShowImage image={image} />
         ))}
       </section>
-      <nav class="flex justify-around items-center mt-4">
+      <nav class="flex justify-around items-center mt-4 text-black dark:text-white">
         <button
           hx-get={`/history/${prev}`}
           hx-target="#history"

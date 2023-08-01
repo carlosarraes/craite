@@ -51,7 +51,7 @@ export const apiRoutes = (app: Elysia) =>
               hx-trigger="load delay:2s"
               hx-swap="outerHTML"
             >
-              <span>{image.imageId}</span>
+              <span class="text-black dark:text-white text-xs">{image.imageId}</span>
               <div class="flex gap-2 items-center">
                 <span class="text-yellow-600 animate-pulse">Processing...</span>
                 <div class="w-2 h-2 bg-yellow-600 animate-pulse rounded"></div>
