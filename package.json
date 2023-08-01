@@ -17,10 +17,11 @@
     "elysia": "latest"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "latest",
     "bun-types": "latest",
     "drizzle-kit": "^0.19.12",
     "typed-html": "^3.0.1"
   },
   "type": "module",
-  "module": "src/index.js"
+  "module": "src/index.ts"
 }

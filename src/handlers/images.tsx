@@ -23,7 +23,7 @@ export const apiRoutes = (app: Elysia) =>
                 w: 512,
                 seed,
               },
-              webhook: `${process.env.NGROK_URL}/images/webhook`,
+              webhook: `${process.env.WEBHOOK_URL}/images/webhook`,
             },
             {
               headers: {
