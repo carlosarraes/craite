@@ -15,13 +15,16 @@ const History = ({ images, off, hasNext }: HistoryProps) => {
   const hasPrev = off > 0
 
   return (
-    <section id="history" class="flex flex-col w-full">
+    <section
+      id="history"
+      class="w-full sm:w-96 h-[600px] flex flex-col justify-center items-center gap-2"
+    >
       <div class="flex justify-evenly items-center border-b mb-4 text-black dark:text-white">
         <h2>History</h2>
         <p class="text-xs hidden sm:block">All the images that have been generated.</p>
       </div>
       <section id="images" class="flex flex-col overflow-auto max-h-[600px] space-y-4">
-        {images.map((image, i) => (
+        {images.map((image) => (
           <ShowImage image={image} />
         ))}
       </section>

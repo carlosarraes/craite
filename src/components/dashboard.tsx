@@ -1,6 +1,5 @@
 import elements from 'typed-html'
 
-// Dashboard component
 export const Dashboard = () => {
   return (
     <section
@@ -11,6 +10,7 @@ export const Dashboard = () => {
         hx-get="/show"
         hx-swap="innerHTML"
         hx-trigger="load delay:2s"
+        hx-boosted="true"
         class="w-full sm:w-96 h-96 flex justify-center items-center gap-2"
       >
         <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse self-center"></div>

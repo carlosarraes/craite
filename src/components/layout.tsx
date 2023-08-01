@@ -15,10 +15,17 @@ export const Layout = ({ children }: elements.Children) => {
       ${children}
     <script>
       function toggleDarkMode() {
-        console.log('click')
         const root = document.getElementById('root');
         root.classList.toggle('dark');
       }
+
+      document.body.addEventListener('htmx:afterOnLoad', function (event) {
+        if (event.detail.xhr.status === 502) {
+          setTimeout(function () {
+            htmx.trigger(event.detail.elt, 'load');
+          }, 1000);
+        }
+      });
     </script>
   </html>
 `
