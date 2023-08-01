@@ -1,14 +1,27 @@
 import elements from 'typed-html'
 import { Elysia, t } from 'elysia'
-import { Dashboard } from '@/view/dashboard'
 import { setup } from '@/db/setup'
 import { images } from '@/db/schema'
-import { desc, eq, isNotNull } from 'drizzle-orm'
+import { and, desc, eq, gt, isNotNull } from 'drizzle-orm'
+import { Dashboard } from '@/components/dashboard'
+import History from '@/components/history'
 
 export const viewRoutes = (app: Elysia) =>
   app
     .use(setup)
     .get('/dashboard', () => <Dashboard />)
+    .get('/history', async ({ store: { db } }) => {
+      const currentTime = new Date().toISOString()
+
+      const allImages = await db
+        .select()
+        .from(images)
+        .where(and(isNotNull(images.url), gt(images.expiresAt, currentTime)))
+        .orderBy(desc(images.expiresAt))
+        .all()
+
+      return <History images={allImages} />
+    })
     .get('/show', async ({ store: { db } }) => {
       const image = await db
         .select()
