@@ -8,10 +8,10 @@ You can take it for a spin here: [Craite on Fly.io](https://craite.fly.dev/)
 
 I decided to try out some fancy new tech and frameworks for this project. Here's what I used:
 
-    - Frontend: I used HTMX and Tailwind CSS. These make sure everything looks pretty and works smoothly.
-    - Backend: Elysia and Bun are the heroes doing all the heavy lifting in the background.
-    - Database: SQLite with Drizzle ORM helps me keep track of all the cool stuff you create.
-    - Hosting: The whole thing is hosted on Fly.io, which is super easy and reliable.
+- Frontend: I used HTMX and Tailwind CSS. These make sure everything looks pretty and works smoothly.
+- Backend: Elysia and Bun are the heroes doing all the heavy lifting in the background.
+- Database: SQLite with Drizzle ORM helps me keep track of all the cool stuff you create.
+- Hosting: The whole thing is hosted on Fly.io, which is super easy and reliable.
 
 Basically, I wanted to try out this thing called the BETH stack (Bun, Elysia, Turso, HTMX), and have a go at Server-Side Rendering (SSR). It was a wild ride, but I loved every bit of it!
 
