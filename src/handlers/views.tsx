@@ -41,9 +41,23 @@ export const viewRoutes = (app: Elysia) =>
         .orderBy(desc(images.id))
         .get()
 
+      if (!image || !image.url) {
+        return (
+          <div
+            hx-get="/show"
+            hx-swap="outerHTML"
+            hx-trigger="load delay:2s"
+            class="w-96 h-96 flex justify-center items-center gap-2"
+          >
+            <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse self-center"></div>
+            <span class="text-xs self-center">Loading...</span>
+          </div>
+        )
+      }
+
       return (
         <div hx-get="/show" hx-swap="outerHTML" hx-trigger="load delay:10s" class="rounded shadow">
-          <img src={image.url!} alt={image.content} class="w-96 h-96 rounded" />
+          <img src={image.url} alt={image.content} class="w-96 h-96 rounded" />
         </div>
       )
     })
