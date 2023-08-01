@@ -5,6 +5,7 @@ import { db } from './db'
 import { apiRoutes, viewRoutes } from './handlers'
 import { Layout } from './components/layout'
 import { staticPlugin } from '@elysiajs/static'
+import Header from './components/header'
 
 const app = new Elysia()
   .use(html())
@@ -13,12 +14,17 @@ const app = new Elysia()
   .get('/', ({ html }) =>
     html(
       <Layout>
-        <body
-          class="flex w-full h-screen justify-center items-center"
-          hx-get="/dashboard"
-          hx-trigger="load"
-          hx-swap="innerHTML"
-        ></body>
+        <body class="flex w-full h-screen justify-center items-center">
+          <main class="flex flex-col items-center justify-center w-full max-w-lg">
+            <Header />
+            <section
+              id="section-content"
+              hx-get="/dashboard"
+              hx-trigger="load"
+              hx-swap="outerHTML"
+            />
+          </main>
+        </body>
       </Layout>,
     ),
   )
