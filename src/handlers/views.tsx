@@ -56,7 +56,12 @@ export const viewRoutes = (app: Elysia) =>
       }
 
       return (
-        <div hx-get="/show" hx-swap="outerHTML" hx-trigger="load delay:10s" class="rounded shadow">
+        <div
+          hx-get="/show"
+          hx-swap="outerHTML"
+          hx-trigger="load delay:10s"
+          class="w-96 h-96 flex justify-center items-center gap-2"
+        >
           <img src={image.url} alt={image.content} class="w-96 h-96 rounded" />
         </div>
       )

@@ -6,8 +6,10 @@ import { apiRoutes, viewRoutes } from './handlers'
 import { Layout } from './components/layout'
 import { staticPlugin } from '@elysiajs/static'
 import Header from './components/header'
+import { cors } from '@elysiajs/cors'
 
 const app = new Elysia()
+  .use(cors())
   .use(html())
   .use(staticPlugin())
   .state('db', db)
